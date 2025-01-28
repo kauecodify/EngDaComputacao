@@ -1,6 +1,6 @@
 # SIGNIFICADOS GEOMÉTRICOS E APLICAÇÕES
 
-**DERIVADOS PARCIAIS*
+*DERIVADOS PARCIAIS*
 
 **cálculo da parabula de revolução**
 
