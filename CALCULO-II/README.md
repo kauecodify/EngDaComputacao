@@ -1,9 +1,11 @@
 # SIGNIFICADOS GEOMÉTRICOS E APLICAÇÕES
 
-*DERIVADOS PARCIAIS*
+*curva de nível*
 
 **cálculo da parabula de revolução**
 
 UTILIZADO PARA CAPTURA DE SINAIS EM RADARES, ANTENAS PARABÓLICAS, PAINÉIS SOLARES, ENTRE OUYTROS...
 
 ![Captura de tela 2025-01-28 000021](https://github.com/user-attachments/assets/e64c9f8f-0039-4110-97b7-8b805970c27a)
+
+
