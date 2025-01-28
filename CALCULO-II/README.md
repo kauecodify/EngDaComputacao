@@ -18,6 +18,17 @@ como uma função varia em relação a uma das suas variáveis, mantendo as outr
 
 ![image](https://github.com/user-attachments/assets/4d6c324b-0275-4cdd-be2f-f16b242f8f83)
 
+---
+
+*gradient*
+
+sempre perpendicular a raiz de nível da função e após cálculo de derivados parciais
+
+usabilidade: analise da dispersão dos dados sociais, econômicos e ambientais
+
+![image](https://github.com/user-attachments/assets/9fcbcf2f-7c84-40d0-9e18-53870a5c7d4f)
+
+
 
 
 *Otimização Multivariável*
