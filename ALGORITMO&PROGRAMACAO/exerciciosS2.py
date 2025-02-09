@@ -33,3 +33,22 @@ resultado_7 = min(34.99, 29.95, 31.50) < 30.00
 # print(resultado_5)  # True
 # print(resultado_6)  # False
 # print(resultado_7)  # True
+
+# Exercício 2.3
+
+a = 3
+b = 4
+c = a * a + b * b
+
+# Exercício 2.4
+
+s1 = 'ant'
+s2 = 'bat'
+s3 = 'cod'
+
+# Exercício 2.5
+
+s = '0123456789'
+
+
+
