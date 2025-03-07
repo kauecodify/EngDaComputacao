@@ -5,7 +5,7 @@
 
 **REPOSITÓRIO PARA EXECUÇÃO DE ATIVIDADES**
 
-CALCULAR NOTAS DO BIMESTRE COM O ALG **MEDIAMED**
+CALCULO NOTAS DO BIMESTRE COM O ALG **MEDIAMED**
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="90" />
 
