@@ -13,7 +13,7 @@ CÁLCULO DE NOTAS DO BIMESTRE NA PASTA **MEDIAMED**
 
 ADICIONAR NOTAS >>> EXIBIR PLANILHAS (LOOP) = CALCULAR MÉDIA
 
-#
+# ---
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="90" /> <img src="https://img.icons8.com/?size=100&id=JdUAwt7mLjDS&format=png&color=000000" width="90"/>
 
