@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nota Final • UNIVESP</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%);
+      min-height: 100vh;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    nav img {
+      height: 48px;
+      width: auto;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 3rem auto 2rem;
+      padding: 2.5rem 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 
+        0 10px 25px -5px rgba(0, 0, 0, 0.08),
+        0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    button {
+      width: 100%;
+      padding: 1rem;
+      background: #dc2626;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px -4px rgba(220, 38, 38, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #resultado {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+    }
+
+    #resultado.sucesso {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    #resultado.erro {
+      background: #fef2f2;
+      color: #991b1b;
+      border-color: #fecaca;
+    }
+
+    .footer-link {
+      text-align: center;
+      margin: 2.5rem 0 1rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .footer-link a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .footer-link a:hover {
+      background: rgba(37, 99, 235, 0.1);
+      color: #1d4ed8;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 1.5rem 1rem;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="univesp.png" alt="UNIVESP">
+  </nav>
+
+  <div class="container">
+    <h1>Calculadora de Nota Final</h1>
+
+    <form id="notaForm">
+      <div class="form-group">
+        <label for="ae">Nota Total das Avaliações Semanais (AE)</label>
+        <input type="number" id="ae" min="0" max="10" step="0.01" placeholder="Ex: 7.85" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ap">Nota do Exame Final (AP)</label>
+        <input type="number" id="ap" min="0" max="10" step="0.01" placeholder="Ex: 6.20" required>
+      </div>
+
+      <button type="button" onclick="calcularNota()">Calcular Nota Final</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <div class="footer-link">
+      <a href="https://github.com/KaueCodify" target="_blank">Ver no GitHub</a>
+    </div>
+  </div>
+
+  <script>
+    function calcularNota() {
+      const ae = parseFloat(document.getElementById('ae').value);
+      const ap = parseFloat(document.getElementById('ap').value);
+      const resultadoEl = document.getElementById('resultado');
+
+      if (isNaN(ae) || isNaN(ap) || ae < 0 || ae > 10 || ap < 0 || ap > 10) {
+        resultadoEl.textContent = 'Por favor, insira notas entre 0 e 10.';
+        resultadoEl.className = 'erro';
+        return;
+      }
+
+      const notaFinal = (ae * 0.4) + (ap * 0.6);
+      const mensagem = `Sua nota final é: ${notaFinal.toFixed(2)}`;
+
+      resultadoEl.textContent = mensagem;
+      resultadoEl.className = 'sucesso';
+    }
+  </script>
+</body>
+</html>
